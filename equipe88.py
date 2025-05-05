@@ -4,7 +4,8 @@ from schema import schema
 
 sigma = 1
 L = 1
-f = lambda x: np.sin(np.pi * x)
+def f(x):
+    return np.sin(np.pi * x)
 h = 1/10
 x_vals = np.linspace(0, L, int(L/h) + 1)
 
