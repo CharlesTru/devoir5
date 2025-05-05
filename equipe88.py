@@ -2,18 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from schema import schema
 
-# Paramètres
 sigma = 1
 L = 1
 f = lambda x: np.sin(np.pi * x)
 h = 1/10
 x_vals = np.linspace(0, L, int(L/h) + 1)
 
-# Solution exacte
 def u_exact(x, t):
     return np.exp(-np.pi**2 * t) * np.sin(np.pi * x)
 
-# Étapes de temps
 for tau in [0.01, 0.001]:
     K = int(1 / tau)
     t_vals, y_vals = schema(sigma, L, f, h, tau, K)
